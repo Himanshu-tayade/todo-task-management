@@ -7,7 +7,12 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://todo-task-management-1-nye4.onrender.com",
+    credentials: true
+  })
+);
 app.use(express.json());
 
 app.use("/api/auth", require("./routers/authRoutes"));
