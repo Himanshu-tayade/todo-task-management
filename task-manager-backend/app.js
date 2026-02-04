@@ -10,7 +10,9 @@ const app = express();
 app.use(
   cors({
     origin: "https://todo-task-management-1-nye4.onrender.com",
-    credentials: true
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
   })
 );
 app.use(express.json());
